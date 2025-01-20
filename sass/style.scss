@@ -1,96 +1,8 @@
+// @import './variables';     
+// @import './font';           
+// @import './typography'; 
 
-
-$primary-color: #17696A;
-$c_text:#1D1F22;
-$font_light :  'Raleway_light', sans-serif;
-$font_regular: 'Raleway_regular', sans-serif;
-$font_medium: 'Raleway_medium', sans-serif;
-$font_bold:'Raleway_bold', sans-serif;
-$lato_bold:"Lato_bold", sans-serif;
-$lato_regular:'Lato_regular', sans-serif;
-$dark_variant:#43464E;
-$gray :#72757E;
-$light_gray:#E5E8ED;
-$gray_600:#9A9CA5;
-$secondary_color:#1E212C;
-$danger : #FF4242;
-$gray_700:#787A80;
-$white:#fff;
-$gray_800:#424551;
-$pink:#E0AEA2;
-$gray_400:#D7DADD;
-$blue_light :#C0DDED;
-$yellow_color:#FEDE41;
-
-::before,
-::after
-{
-    box-sizing: border-box;
-}
-body {
-    margin: 0;
-    font-family: $lato_regular;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    background-color: #fff;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  }
-  h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6{
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    line-height: 1.2;
-
-  }
- h1,.h1{
-    font-size: 3rem;
- }
- h2,.h2{
-    font-size: 2.5rem;
- }
- h3,.h3{
-    font-size: 2rem;
- }
- h4,.h4{
-    font-size: 1.75rem;
- }
- h5,.h5{
-    font-size: 1.5rem;
- }
- h6,.h6{
-    font-size: 1.25rem;
- }
- p {
-    margin-top: 0;
-    margin-bottom: 1rem;
-  }
-
-ol,ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-a{
-    text-decoration: none;
-}
-input{
-    border: none;
-    outline: none;
-}
-button{
-    outline: none !important;
-    border: none !important;
-}
 @font-face {
-    font-family: 'Raleway_bold';
-    src: url('../assets/fonts/Raleway-Bold.woff2') format('woff2');
-    font-weight: bold;
-    font-style: normal;
-  }
-  
-  @font-face {
     font-family: 'Raleway_light';
     src: url('../assets/fonts/Raleway-Light.woff2') format('woff2');
     font-weight: 300;
@@ -111,9 +23,9 @@ button{
     font-style: normal;
 }
 @font-face {
-    font-family: 'Lato_bold';
-    src: url('../assets/fonts/Lato-Bold.woff2') format('woff2');
-    font-weight: 700;
+    font-family: 'Raleway_bold';
+    src: url('../assets/fonts/Raleway-Bold.woff2') format('woff2');
+    font-weight: bold;
     font-style: normal;
 }
 @font-face {
@@ -122,46 +34,262 @@ button{
     font-weight: 400;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Lato_bold';
+    src: url('../assets/fonts/Lato-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
 
+// variables
+// Font
+$font-base-size: 1rem; 
+$line-height-base: 1.5rem;
+// Font family
+$font_light :  'Raleway_light', sans-serif;
+$font_regular: 'Raleway_regular', sans-serif;
+$font_medium: 'Raleway_medium', sans-serif;
+$font_bold:'Raleway_bold', sans-serif;
+$lato_bold:"Lato_bold", sans-serif;
+$lato_regular:'Lato_regular', sans-serif;
+// Color
+$primary-color: #17696A;
+$secondary_color:#1E212C;
+$c_text:#1D1F22;
+$dark_variant:#43464E;
+$gray_800:#424551;
+$gray :#72757E;
+$gray_700:#6F7176;
+$gray_600:#737582;
+$gray_400:#D7DADD;
+$light_gray:#E5E8ED;
+$white:#fff;
+$blue_light :#C0DDED;
+$danger : #E00000;
+$pink:#E0AEA2;
+$yellow_color:#FEDE41;
+// check points
+$breakpoint-xs: 0px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+@mixin respond($breakpoint) {
+    @if $breakpoint == 'xs' {
+      @media (max-width: 575px) {
+        @content;
+      }
+    } @else if $breakpoint == 'sm' {
+      @media (max-width: 767px) {
+        @content;
+      }
+    } @else if $breakpoint == 'md' {
+      @media (max-width: 991px) {
+        @content;
+      }
+    } @else if $breakpoint == 'lg' {
+      @media (max-width: 1199px) {
+        @content;
+      }
+    } @else if $breakpoint == 'xl' {
+      @media (max-width: 1599px) { 
+        @content;
+      }
+    } @else {
+      @warn "Unknown breakpoint: #{$breakpoint}. Please use xs, sm, md, lg, or xl.";
+    }
+  }
+  
 
-.ml_min{
+html{
+    font-size: $font-base-size;
+    line-height: $line-height-base;
+    font-family: $lato_bold;
+    color: $gray;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-size: $font-base-size;
+    background-color: $white;
+    font-family: $lato_regular;
+}
+h1,.h1{
+font-size: 3.8rem;
+color: $secondary_color;
+@include respond('xl') {
+    font-size: 3.4rem;
+}
+@include respond('lg') {
+    font-size: 3.2rem;
+}
+@include respond('md') {
+    font-size: 2.8rem !important;
+}
+@include respond('sm') {        
+    font-size: 3.5rem ;
+    line-height: 3.5rem;
+}
+@include respond('xs') {
+          line-height: 3.8rem;
+    font-size: 3.8rem;
+}
+}
+h2,.h2{
+font-size: 2.5rem;
+@include respond('xl') {
+    font-size: 2.2rem;
+}
+@include respond('lg') {
+    font-size: 2rem;
+}
+@include respond('md') {
+    font-size: 1.8rem !important;
+}
+}
+h3,h3{
+font-size: 2rem;
+color: $secondary_color;
+font-family: $lato_bold;
+margin-left: 2rem;
+}
+h4,.h4{
+    font-size: 1.75rem;
+}
+h5,.h5{
+    font-size: 1.5rem;
+    color: $secondary_color;
+    @include respond('lg') {
+        font-size: 1.6rem;
+
+    }
+}
+h6,.h6{
+    font-size: 1.25rem;
+} 
+p{
+    font-size: $font-base-size;
+    line-height: $line-height-base;
+    margin: 1rem 0;
+}
+.p{
+    font-size: 1.1rem;
+    color: $gray_800;
+    font-family: $lato_regular;
+    @include respond('lg') {
+        font-size: 1.2rem !important;
+    }
+    .deliveryhighlight{
+    font-family: $lato_bold;
+    }
+}
+small{
+    font-size: 0.875rem;
+    color: $gray;
+}
+strong{
+    font-weight: bold;
+}
+em{
+    font-style: italic;
+}
+a {
+    color: $font_regular;
+    text-decoration: none;
+  
+    &:hover,
+    &:focus {
+      color: $primary-color;
+      text-decoration:  none;
+    }
+  }
+  input{
+    border: none;
+    outline: none;
+}
+  ul, ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  ul li {
+    list-style-type: disc;
+  }
+  ol li {
+    list-style-type: decimal;
+  }
+  button {
+    font-size: 1rem;
+    font-weight: bold;
+    color: $white;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    outline: none;
+  }
+  .btn {
+    font-size: 1rem;
+    font-weight: bold;
+    color: $white;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+.text-center {
+    text-align: center;
+  }
+  .text-right {
+    text-align: right;
+  }
+  .text-left {
+    text-align: left;
+  }
+  .text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .m-0 {
+    margin: 0;
+  }
+  
+  .mt-1 {
+    margin-top: 0.25rem;
+  }
+  .ml_min{
     margin-left: 1rem;
 }
 .paymentimg{
     width: 8rem;
     height: 4rem;
-}
-.p{
-    color: $gray_800;
-    font-family: $lato_regular;
-    .deliveryhighlight{
-    font-family: $lato_bold;
+    @include respond('lg') {width: 6rem;
+        height: 3rem;
     }
 }
 .min-font-size{
-    font-size: 1rem;
-
+    font-size: $font-base-size;
 }
-.h3 { 
-    color: $secondary_color;
-    font-family: $lato_bold;
-    margin-left: 2rem;
-}
-.primary-btn{
-    background-color: $primary-color;
-    padding: 12px 8px;
+.primary-button {
+    background-color:$primary-color; 
+    color: $white; 
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
-}
-.secondary-btn{
-    border: 1px solid $primary-color;
+    border-radius: 5px;
+  }
+  .secondary-btn{
+    border: 1px solid $primary-color  !important;
     justify-content: center;
     font-family: $lato_bold;
-}
-.b-radius-minimal{
+    background-color: transparent;
+  }
+  .b-radius-minimal{
     border-radius: 4px;
-}
-h1{
-    margin: 0;
 }
 .flex{
     display: flex;
@@ -183,13 +311,16 @@ h1{
     width: 48%;   
 }
 .b-radius-100{
-    border-radius: 100%;
-}
-.outercircleatt{
     width: 1.4rem;
     height: 1.4rem;
     max-width: 1.4rem;
     max-height: 1.4rem;
+    @include respond('lg') {
+        max-width: 2.5rem;
+        max-height: 2.5rem;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
 }
 .innercircleatt{
     width: 1rem;
@@ -198,6 +329,14 @@ h1{
     max-height: 1rem;
     top: 3px;
     left: 3px;
+    @include respond('lg') {
+        max-width: 2rem;
+        max-height: 2rem;
+        width: 2rem;
+        height: 2rem;
+        top: 4px;
+    left: 4px;
+    }
 }
 .circleborder{
     border: 1px solid $gray_400;
@@ -207,47 +346,87 @@ h1{
 }
 .wrapper {
     width: 86vw;
-    margin: auto;
+    // margin: 0 auto;
+    padding: 0 6rem;
+    @include respond('lg') {
+        width: 90vw;
+        padding: 0 3rem;    
+    }
 	header { 
 		.container { 
             padding: 16px 0;
+            @include respond('xl') {
+                padding: 24px 0;
+            }
 			.leftnavitem {
                 width: 16vw;
+                @include respond('xl') {
+                    width: 24vw;
+                }
+                @include respond('lg') {
+                    width: 29vw;
+                }
 				.brand { 
 					img.logo { 
-                        width: 2.1rem;
+                        width: 2.25rem;
+                        height: 2.25rem;
 					}
+                    @include respond('md') {
+                        width: 3.25rem;
+                        height: 3.25rem;
+                    }
 				}
 				#menu {
-					li { 
-                        padding-bottom: 16px;
+                    @include respond('md') {
+                        display: none;
+                    }
+                    li { 
+                        list-style: none !important;
+                        padding-bottom: 16px !important;
                         width: 5rem;
                         text-align: center;
-                        border-bottom: 2px solid transparent;
+                        border-bottom: 2px solid transparent !important;
                         a{
                             color: $c_text;
                             font-family: $font_regular;
                             display: inline-block;
                             transition: color 0.3s ease;
+                            text-decoration: none !important;
                         }
                         &:hover {
-                            border-bottom: 2px solid $primary-color;
+                            border-bottom: 2px solid $primary-color !important;
                             transition: color 0.3s ease;
+                            text-decoration: none !important;
                             a{
                                 color: $primary-color;
                                 font-family: $font_medium;
+                                text-decoration: none !important;
                             }
                         }
 					}
 				}
 			}
-            
 			.rightnavitem { 
                 width: 32rem;
+                @include respond('md') {
+                    display: none;
+                }
+                @include respond('xl') {
+                    width: 33rem;
+                }
+                @include respond('lg') {
+                    width: 30rem;
+                }
 				.searchitem { 
                     border-bottom: 2px solid $dark_variant;
 					#search { 
                         width: 20rem;
+                        @include respond('xl') {
+                            width: 19rem;
+                        }
+                        @include respond('lg') {
+                            width: 16rem;
+                        }
                         &::placeholder{
                             line-height: 2rem; 
                             color: $gray;
@@ -256,18 +435,26 @@ h1{
                         }
 					}
 				}
+                button .usericon,button .favoriteicon,button .carticon{
+                    width: 1.5rem;
+                    height: 1.5rem;
+                }
 			}
 		}
 	}
 	.mainsection { 
-        padding-top: 4rem;
-		h1 { 
+        padding: 4rem 0;
+        @include respond('sm') {
+            padding-top: 2rem;
+
+        }
+		.h1 { 
             color: $secondary_color;
             font-family: $font_bold;
             font-size: 3.4rem;
 		}
 		.tabs { 
-            margin: 2rem 0;
+            margin: 3rem 0;
             border-bottom: 2px solid $light_gray;
             padding-bottom: 2rem;
             .generalinfo { 
@@ -292,23 +479,69 @@ h1{
 			}
 		}
 		.detailscontainer { 
+           @include respond('lg') {
+            flex-direction: column;
+           }
 			.detailsleftsection { 
-                gap: 4rem;
+               @include respond('xl') {
+                   width: 48%;
+               }
+               @include respond('lg') {
+                width: 100%;
+                margin: 0 auto 36px;
+                }
+                
+                @include respond('xs') {
+                    margin-bottom: 3rem;
+                }
 				.productimage { 
                     width: 48rem;
                     height: 52rem;
+                    @include respond('xl') {
+                        width: 33rem;
+                        height: 38rem;
+                    }
+                    @include respond('lg') {
+                        width: 55.4rem;
+                        height: 60rem;
+                    }
+                    @include respond('md') {
+                        width: 43.2rem;
+                        height: 50rem;
+
+                    }
+                    @include respond('xs') {
+                        width: 32.2rem;
+                        height: 36rem;
+                    }
 				}
 				.imgsections { 
                     margin-top: 1.6rem;
+                   
 					.imagepart1{
                         width: 8rem;
                         height: 8rem;
-                        
                         border: 2px solid transparent;
                         transition: all 0.3s ease-in-out;
-                        &:hover{
+                         &:hover{
                             border: 2px solid $primary-color;
-                        }  
+                        } 
+                        @include respond('xl') {
+                            width: 6.4rem;
+                            height: 6.4rem;
+                        }
+                        @include respond('lg') {
+                            width: 9rem;
+                            height: 9rem;
+                        }
+                        @include respond('md') {
+                            width: 8rem;
+        height: 8rem;
+                        }
+                        @include respond('xs') {
+                            width: 6rem;
+        height: 6rem;
+                        }
                     }
                     .imagepart2{
                         width: 8rem;
@@ -317,6 +550,22 @@ h1{
                         transition: all 0.3s ease-in-out;
                         &:hover{
                             border: 2px solid $primary-color;
+                        }
+                        @include respond('xl') {
+                            width: 6.4rem;
+                            height: 6.4rem;
+                        }
+                        @include respond('lg') {
+                            width: 9rem;
+                            height: 9rem;
+                        }
+                        @include respond('md') {
+                            width: 8rem;
+        height: 8rem;
+                        }
+                        @include respond('xs') {
+                            width: 6rem;
+        height: 6rem;
                         }
                     }
                     .imagepart5{
@@ -327,6 +576,22 @@ h1{
                         position: relative !important;
                         &:hover{
                             border: 2px solid $primary-color;
+                        }
+                        @include respond('xl') {
+                            width: 6.4rem;
+                            height: 6.4rem;
+                        }
+                        @include respond('lg') {
+                            width: 9rem;
+                            height: 9rem;
+                        }
+                        @include respond('md') {
+                            width: 8rem;
+        height: 8rem;
+                        }
+                        @include respond('xs') {
+                            width: 6rem;
+        height: 6rem;
                         }
                     }
                     .imgwithicon{
@@ -342,6 +607,24 @@ h1{
                             transition: opacity 0.3s ease-in-out; 
                             border-radius: 4px;
                             z-index: 1; 
+                            width: 8.1rem;
+                            height: 8rem;
+                            @include respond('xl') {
+                                width: 6.4rem;
+                                height: 6.4rem;
+                            }
+                            @include respond('lg') {
+                                width: 9.1rem;
+                                height: 9.1rem;
+                            }
+                            @include respond('md') {
+                                width: 8.1rem;
+        height: 8.1rem;
+                            }
+                            @include respond('xs') {
+                                width: 6.1rem;
+        height: 6.1rem;
+                            }
                         }
                     }
 					.pauseicon { 
@@ -351,68 +634,158 @@ h1{
                         bottom: 0;
                         right: 0;
                         transform: translate(-50%, -50%);
-                        color: white;
+                        color:$white;
                         font-size: 2rem; 
                         z-index: 2; 
+                        @include respond('xl') {
+                            top: 51px;
+                            left: 48px;
+                        }
+                        @include respond('lg') {
+                            top: 73px;
+                            left: 73px;
+                        }
+                        @include respond('md') {
+                            top: 66px;
+        left: 66px;
+                        }
+
+                        @include respond('xs') {
+                            top: 54px;
+                            left: 49px;
+                        }
 					}
+                    .leftarrow{
+                        top: 0;
+                        left: 44px;
+                        border-radius: 100%;
+                        background: #fff;
+                        width: 3rem;
+                        height: 3rem;
+                        align-items: center;
+                        justify-content: center;
+                        transform: translateY(-496px);   
+                        img{
+                            width: 1.5rem;
+                            height: 1.5rem;
+                        }
+                        @include respond('xl') {
+                            transform: translateY(-366px);
+
+                        }
+                        @include respond('lg') {
+                            transform: translateY(-577px);
+                        }
+                        @include respond('md') {
+                            transform: translateY(-465px);
+
+                        }
+                        @include respond('xs') {
+                            transform: translateY(-348px);
+                        }
+                    }
+                    .rightarrow{
+                        top: 0;
+                        right: 44px;
+                        border-radius: 100%;
+                        background: #fff;
+                        width: 3rem;
+                        height: 3rem;
+                        align-items: center;
+                        justify-content: center;
+                        transform: translateY(-496px);
+                        img{
+                            width: 1.5rem;
+                            height: 1.5rem;
+                        }
+                        @include respond('xl') {
+                            transform: translateY(-367px);
+                        }
+                        @include respond('lg') {
+                            transform: translateY(-565px);
+
+                        }
+                        @include respond('md') {
+                            transform: translateY(-468px);
+                        }
+                        @include respond('xs') {
+                            transform: translateY(-349px);
+                        }
+                    }
 				}
 			}
 			.detailsrightsection { 
                 width: 42%;
+                @include respond('xl') {
+                    width: 46%;
+                }
+                @include respond('lg') {
+                    width: 100%;
+                }
 				.priceandreview { 
 					.price-section { 
 						.price { 
                             font-family: $font_medium;
-                            color: $danger;
+                            color:$danger;
                             font-family: $lato_bold;
-                            font-size: 1.4rem;
+                            font-size: 2rem;
                             margin-right: 1rem;
+                            @include respond('xl') {
+                                font-size: 1.8rem;
+                            }
+                            @include respond('lg') {
+                                font-size: 2rem;
+                            }
 						}
 						.old-price { 
                             color: $gray_700;
-                            font-family: $lato_regular;
+                            font-family:  $lato_regular;
                             text-decoration: line-through;
 						}
 						.discount { 
                             font-family: $lato_bold;
                             color: $white;
-                            background-color: $danger;
-
+                            background-color:$danger;
                             padding: 4px;
                             margin-left: 2rem;
-
+                            @include respond('lg') {
+                                padding: 8px;
+                            }
 						}
 					}
-
 					.reviewsecton { 
-
                         flex-direction: column;
 						.ratingimg { 
                             width: 4rem;
-
+                            height: 1rem;
+                            @include respond('lg') {
+                                width: 6rem;
+                            }
 						}
-
 						span { 
                             color: $gray_700;
-                            font-family: $lato_regular;
-                            font-size: .8rem;
-                            margin-top: .6rem;
-
+                            font-family:  $lato_regular;
+                            font-size: .9rem;
 						}
 					}
 				}
 				.color-selection { 
-                    margin-top: 1.4rem;
+                    margin-top: 1.5rem;
 					span { 
                         text-transform: capitalize;
-                        color: $gray_800;
-                        font-size: 1rem;
-                        font-family: $lato_regular;
+                        color:  $gray_800;
+                        font-size: 1.3rem;
+                        font-family:  $lato_regular;
 					}
 					.colorsector { 
-                        margin-top: .8rem;
+                        margin-top: 1rem;
                         width: 8rem;
 						.outercirclepink { 
+                            height: 2rem;
+                            width: 2rem;
+                            background-color: transparent;
+                            border-radius: 100% !important;
+                            
                             &:hover{
                                 border: 1px solid $primary-color;
                                 .colorname {
@@ -420,10 +793,17 @@ h1{
                                 }
                             }
 							.innercirclepink { 
+                            border-radius: 100% !important;
+                                height: 1.5rem;
+                            width: 1.5rem;
                                 background-color: $pink;
 							}
 						}
 						.outercircleblue { 
+                            height: 2rem;
+                            width: 2rem;
+                            background-color: transparent;
+                            border-radius: 100% !important;
                             &:hover{
                                 border: 1px solid $primary-color;
                                 .colornameblue{
@@ -431,10 +811,17 @@ h1{
                                 }
                             }
 							.innercircleblue { 
+                                height: 1.5rem;
+                            width: 1.5rem;
+                            border-radius: 100% !important;
                                 background-color: $blue_light;
 							}
 						}
 						.outercircleyellow { 
+                            height: 2rem;
+                            width: 2rem;
+                            background-color: transparent;
+                            border-radius: 100% !important;
                             &:hover{
                                 border: 1px solid $primary-color;
                                 .colornameyellow {
@@ -442,6 +829,10 @@ h1{
                                 }
                             }
 							.innercircleyellow { 
+                                height: 1.5rem;
+                            width: 1.5rem;
+                            border-radius: 100% !important;
+
                                 background-color: $yellow_color;
 							}
 						}
@@ -461,7 +852,7 @@ h1{
                             transform: translateX(-50%);
                             left: 8rem;
                             color: $gray_600;
-                            font-family: $lato_regular;
+                            font-family:  $lato_regular;
                         }
                         .colornameyellow{
                             display: none;
@@ -470,16 +861,22 @@ h1{
                             transform: translateX(-50%);
                             left: 4rem;
                             color: $gray_600;
-                            font-family: $lato_regular;
+                            font-family:  $lato_regular;
                         }
 					}
 				}
 				.size-selection { 
                     margin-top: 1.4rem;
-                    flex-direction: column;
+                    align-items: end;
+                    @include respond('xs') {
+                        flex-direction: column;
+                    }
+                    .sizesection{
+                       flex-direction: column;
 					label { 
-                        color: $gray_800;
-                        font-family: $lato_regular;
+                        color:  $gray_800;
+                        font-size: 1.3rem;
+                        font-family:  $lato_regular;
 					}
 					#size { 
                         margin-top: .4rem;
@@ -488,40 +885,96 @@ h1{
                         padding: .6rem;
                         background-color: transparent;
                         option {
-                            color: $gray_800; 
+                            color: $gray_800;
+                        }
+                        @include respond('xl') {
+                            width: 23rem;
+                        }
+                        @include respond('lg') {
+                            width: 50rem;
+                        }
+                        @include respond('md') {
+                            width: 36rem;
+                        }
+                        @include respond('xs') {
+                            width: 32.5rem;
                         }
 					}
                     #size option[value=""]{
                         color: $gray_600;
-                            font-family: $lato_regular;
+                            font-family:  $lato_regular;
                     }
+                    #size option:disabled {
+                        color: $gray_700; 
+                      }
+                    }
+                      .sizechart {
+                        font-family: $lato-bold;
+                        color: $gray_800;
+                        align-items: center;
+
+                          img{
+                            width: 1rem;
+                            height: 1rem;
+                          }
+                          span{
+                            margin-left: 4px;
+                          }
+                      }
 				}
                 .btnsection{
-                    margin-top: 1.4rem;
+                    margin-top: 1.5rem;
                     .quantity-section { 
                         width: 4rem;
                         padding: 8px;
+                        @include respond('xl') {
+                            width: 3rem;
+                        }
+                       
                         #quantity { 
                             width: 3.8rem;
-                            font-family: $lato_regular;
-                            color: $gray_800;
+                            font-family:  $lato_regular;
+                            color:  $gray_800;
+                            @include respond('xl') {
+                                width: 3rem;
+                            }
+                            
                         }
                     }
                     .add-to-cart {   
                         width: 24rem;
                         justify-content: center;
+                        @include respond('xl') {
+                            width: 18rem;
+                        }
+                        @include respond('lg') {
+                            width: 44rem;
+                        }
+                        @include respond('md') {
+                            width: 30rem;
+                        }
+                        @include respond('xs') {
+                            width: 20rem;
+                        }
+                        .carticon{
+                            width: 1rem;
+                            height: 1rem;
+                        }
                         .addtocart { 
                             font-family: $lato_bold;
                             color: $white;
                             margin-left: 4px;
                         }
-                        .carticon { 
-    
-                        }
                     }
                     .favoritesection { 
                         width: 8rem;
                         justify-content: center;
+                        @include respond('xl') {
+                            width: 6rem;
+                        }
+                        @include respond('lg') {
+                            width: 6rem;
+                        }
                         .favorite { 
                             color: $primary-color;
                             margin-left: 4px;
@@ -540,7 +993,7 @@ h1{
                         border-collapse: collapse;
                         text-align: left;
                        thead{
-                        font-family: $lato_regular;
+                        font-family:  $lato_regular;
                         color: $gray_700;
                         font-size: .8rem;
                         text-transform: uppercase;
@@ -548,12 +1001,16 @@ h1{
                         th,td{
                             border-bottom: 1px solid $gray_400;
                             padding: 16px;
+                            color: $gray_700;
+                            font-size: $font-base-size;
                         }
                         thead th {
                             border-bottom: 1px solid $gray_400;
+                            font-size: 1rem;
+                          
                         }
 						tbody { 
-                            font-family: $lato_regular;
+                            font-family:  $lato_regular;
                             color: $gray_800;
                             font-size: .8rem;
 						}
@@ -568,9 +1025,9 @@ h1{
                         margin: 0;
 
 						li { 
-                            color: $gray_800; 
+                            color:  $gray_800;
                             font-family: $lato_regular;
-                            font-size: 1rem;
+                            font-size: 1.1rem;
                             line-height: 1.6;
                             &::marker{
                                 color: $primary-color;
@@ -578,27 +1035,38 @@ h1{
 						}
 					}
 				}
-
 				.sharesection { 
                     justify-content: left;
+                    align-items: center;
 					.h3 { 
                         margin-left: 0;
 					}
+                    .facebook-button{
+                        img.facebook{
+                            width: 2rem !important;
+                            height: 2rem !important;
+                        }
+                    }
+                    .twitter-button{
+                        img.twitter{
+                            width: 2rem !important;
+                            height: 2rem !important;
+                        }
+                    }
+                    .pinterest-button{
+                        img.pinterest{
+                            width: 2rem !important;
+                            height: 2rem !important;
+                        }
+                    }
 				}
 				.payment-options { 
-                    margin-top: 2.8rem;
+                    margin-top: 2.75rem;
                     width: 30rem;
-                    
-						.visImg { 
-						}
-						.Mastercard { 
-
-						}
-
-						.PayPal { 
-
-						}
-					
+                    @include respond('lg') {
+                        width: 24rem;
+                        margin: 0 auto;
+                    }
 				    }
 			}
 		}
