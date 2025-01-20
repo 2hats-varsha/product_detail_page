@@ -1,0 +1,565 @@
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Lato_regular", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: #fff;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h1, .h1 {
+  font-size: 3rem;
+}
+
+h2, .h2 {
+  font-size: 2.5rem;
+}
+
+h3, .h3 {
+  font-size: 2rem;
+}
+
+h4, .h4 {
+  font-size: 1.75rem;
+}
+
+h5, .h5 {
+  font-size: 1.5rem;
+}
+
+h6, .h6 {
+  font-size: 1.25rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+ol, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+button {
+  outline: none !important;
+  border: none !important;
+  background-color: transparent;
+}
+
+@font-face {
+  font-family: "Raleway_bold";
+  src: url("../assets/fonts/Raleway-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Raleway_light";
+  src: url("../assets/fonts/Raleway-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Raleway_regular";
+  src: url("../assets/fonts/Raleway-Regular.woff2") format("woff2"), url("../assets/fonts/Raleway-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Raleway_medium";
+  src: url("../assets/fonts/Raleway-Medium.woff2") format("woff2"), url("../assets/fonts/Raleway-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lato_bold";
+  src: url("../assets/fonts/Lato-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lato_regular";
+  src: url("../assets/fonts/Lato-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+.ml_min {
+  margin-left: 1rem;
+}
+
+.paymentimg {
+  width: 8rem;
+  height: 4rem;
+}
+
+.p {
+  color: #424551;
+  font-family: "Lato_regular", sans-serif;
+}
+.p .deliveryhighlight {
+  font-family: "Lato_bold", sans-serif;
+}
+
+.min-font-size {
+  font-size: 1rem;
+}
+
+.h3 {
+  color: #1E212C;
+  font-family: "Lato_bold", sans-serif;
+  margin-left: 2rem;
+}
+
+.primary-btn {
+  background-color: #17696A;
+  padding: 12px 8px;
+  cursor: pointer;
+}
+
+.secondary-btn {
+  border: 1px solid #17696A;
+  justify-content: center;
+  font-family: "Lato_bold", sans-serif;
+}
+
+.b-radius-minimal {
+  border-radius: 4px;
+}
+
+h1 {
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-alignitem {
+  align-items: center;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.half_width {
+  width: 48%;
+}
+
+.b-radius-100 {
+  border-radius: 100%;
+}
+
+.outercircleatt {
+  width: 1.4rem;
+  height: 1.4rem;
+  max-width: 1.4rem;
+  max-height: 1.4rem;
+}
+
+.innercircleatt {
+  width: 1rem;
+  height: 1rem;
+  max-width: 1rem;
+  max-height: 1rem;
+  top: 3px;
+  left: 3px;
+}
+
+.circleborder {
+  border: 1px solid #D7DADD;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.wrapper {
+  width: 86vw;
+  margin: auto;
+}
+.wrapper header .container {
+  padding: 16px 0;
+}
+.wrapper header .container .leftnavitem {
+  width: 16vw;
+}
+.wrapper header .container .leftnavitem .brand img.logo {
+  width: 2.1rem;
+}
+.wrapper header .container .leftnavitem #menu li {
+  padding-bottom: 16px;
+  width: 5rem;
+  text-align: center;
+  border-bottom: 2px solid transparent;
+}
+.wrapper header .container .leftnavitem #menu li a {
+  color: #1D1F22;
+  font-family: "Raleway_regular", sans-serif;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+.wrapper header .container .leftnavitem #menu li:hover {
+  border-bottom: 2px solid #17696A;
+  transition: color 0.3s ease;
+}
+.wrapper header .container .leftnavitem #menu li:hover a {
+  color: #17696A;
+  font-family: "Raleway_medium", sans-serif;
+}
+.wrapper header .container .rightnavitem {
+  width: 32rem;
+}
+.wrapper header .container .rightnavitem .searchitem {
+  border-bottom: 2px solid #43464E;
+}
+.wrapper header .container .rightnavitem .searchitem #search {
+  width: 20rem;
+}
+.wrapper header .container .rightnavitem .searchitem #search::placeholder {
+  line-height: 2rem;
+  color: #72757E;
+  font-size: 1rem;
+  font-family: "Raleway_light", sans-serif;
+}
+.wrapper .mainsection {
+  padding-top: 4rem;
+}
+.wrapper .mainsection h1 {
+  color: #1E212C;
+  font-family: "Raleway_bold", sans-serif;
+  font-size: 3.4rem;
+}
+.wrapper .mainsection .tabs {
+  margin: 2rem 0;
+  border-bottom: 2px solid #E5E8ED;
+  padding-bottom: 2rem;
+}
+.wrapper .mainsection .tabs .generalinfo {
+  color: #9A9CA5;
+  padding: 0.6rem;
+  font-family: "Raleway_bold", sans-serif;
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+}
+.wrapper .mainsection .tabs .generalinfo:hover {
+  border: 2px solid #17696A;
+  padding: 0.6rem;
+  color: #17696A;
+  border-radius: 4px;
+}
+.wrapper .mainsection .tabs .reviewcount {
+  bottom: 2.8rem;
+  left: 20.98rem;
+  font-size: 0.8rem;
+  font-family: "Raleway_bold", sans-serif;
+  color: #9A9CA5;
+}
+.wrapper .mainsection .detailscontainer .detailsleftsection {
+  gap: 4rem;
+}
+.wrapper .mainsection .detailscontainer .detailsleftsection .productimage {
+  width: 48rem;
+  height: 52rem;
+}
+.wrapper .mainsection .detailscontainer .detailsleftsection .imgsections {
+  margin-top: 1.6rem;
+}
+.wrapper .mainsection .detailscontainer .detailsleftsection .imgsections .imagepart1 {
+  width: 8rem;
+  height: 8rem;
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+}
+.wrapper .mainsection .detailscontainer .detailsleftsection .imgsections .imagepart1:hover {
+  border: 2px solid #17696A;
+}
+.wrapper .mainsection .detailscontainer .detailsleftsection .imgsections .imagepart2 {
+  width: 8rem;
+  height: 8rem;
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+}
+.wrapper .mainsection .detailscontainer .detailsleftsection .imgsections .imagepart2:hover {
+  border: 2px solid #17696A;
+}
+.wrapper .mainsection .detailscontainer .detailsleftsection .imgsections .imagepart5 {
+  width: 8rem;
+  height: 8rem;
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+  position: relative !important;
+}
+.wrapper .mainsection .detailscontainer .detailsleftsection .imgsections .imagepart5:hover {
+  border: 2px solid #17696A;
+}
+.wrapper .mainsection .detailscontainer .detailsleftsection .imgsections .imgwithicon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 4px;
+  z-index: 1;
+}
+.wrapper .mainsection .detailscontainer .detailsleftsection .imgsections .pauseicon {
+  position: absolute;
+  top: 64px;
+  left: 64px;
+  bottom: 0;
+  right: 0;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  z-index: 2;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection {
+  width: 42%;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .priceandreview .price-section .price {
+  font-family: "Raleway_medium", sans-serif;
+  color: #FF4242;
+  font-family: "Lato_bold", sans-serif;
+  font-size: 1.4rem;
+  margin-right: 1rem;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .priceandreview .price-section .old-price {
+  color: #787A80;
+  font-family: "Lato_regular", sans-serif;
+  text-decoration: line-through;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .priceandreview .price-section .discount {
+  font-family: "Lato_bold", sans-serif;
+  color: #fff;
+  background-color: #FF4242;
+  padding: 4px;
+  margin-left: 2rem;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .priceandreview .reviewsecton {
+  flex-direction: column;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .priceandreview .reviewsecton .ratingimg {
+  width: 4rem;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .priceandreview .reviewsecton span {
+  color: #787A80;
+  font-family: "Lato_regular", sans-serif;
+  font-size: 0.8rem;
+  margin-top: 0.6rem;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .color-selection {
+  margin-top: 1.4rem;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .color-selection span {
+  text-transform: capitalize;
+  color: #424551;
+  font-size: 1rem;
+  font-family: "Lato_regular", sans-serif;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .color-selection .colorsector {
+  margin-top: 0.8rem;
+  width: 8rem;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .color-selection .colorsector .outercirclepink:hover {
+  border: 1px solid #17696A;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .color-selection .colorsector .outercirclepink:hover .colorname {
+  display: block;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .color-selection .colorsector .outercirclepink .innercirclepink {
+  background-color: #E0AEA2;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .color-selection .colorsector .outercircleblue:hover {
+  border: 1px solid #17696A;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .color-selection .colorsector .outercircleblue:hover .colornameblue {
+  display: block;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .color-selection .colorsector .outercircleblue .innercircleblue {
+  background-color: #C0DDED;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .color-selection .colorsector .outercircleyellow:hover {
+  border: 1px solid #17696A;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .color-selection .colorsector .outercircleyellow:hover .colornameyellow {
+  display: block;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .color-selection .colorsector .outercircleyellow .innercircleyellow {
+  background-color: #FEDE41;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .color-selection .colorsector .colorname {
+  display: none;
+  position: absolute;
+  top: 7%;
+  transform: translateX(-50%);
+  left: 10rem;
+  color: #9A9CA5;
+  font-family: "Lato_regular", sans-serif;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .color-selection .colorsector .colornameblue {
+  display: none;
+  position: absolute;
+  top: 7%;
+  transform: translateX(-50%);
+  left: 8rem;
+  color: #9A9CA5;
+  font-family: "Lato_regular", sans-serif;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .color-selection .colorsector .colornameyellow {
+  display: none;
+  position: absolute;
+  top: 7%;
+  transform: translateX(-50%);
+  left: 4rem;
+  color: #9A9CA5;
+  font-family: "Lato_regular", sans-serif;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .size-selection {
+  margin-top: 1.4rem;
+  flex-direction: column;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .size-selection label {
+  color: #424551;
+  font-family: "Lato_regular", sans-serif;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .size-selection #size {
+  margin-top: 0.4rem;
+  width: 32rem;
+  border: 2px solid #D7DADD;
+  padding: 0.6rem;
+  background-color: transparent;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .size-selection #size option {
+  color: #424551;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .size-selection #size option[value=""] {
+  color: #9A9CA5;
+  font-family: "Lato_regular", sans-serif;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .btnsection {
+  margin-top: 1.4rem;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .btnsection .quantity-section {
+  width: 4rem;
+  padding: 8px;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .btnsection .quantity-section #quantity {
+  width: 3.8rem;
+  font-family: "Lato_regular", sans-serif;
+  color: #424551;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .btnsection .add-to-cart {
+  width: 24rem;
+  justify-content: center;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .btnsection .add-to-cart .addtocart {
+  font-family: "Lato_bold", sans-serif;
+  color: #fff;
+  margin-left: 4px;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .btnsection .favoritesection {
+  width: 8rem;
+  justify-content: center;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .btnsection .favoritesection .favorite {
+  color: #17696A;
+  margin-left: 4px;
+  font-size: 0.8rem;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .btnsection .favoritesection .heart {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .delivery-section {
+  margin-top: 4rem;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .delivery-section table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .delivery-section table thead {
+  font-family: "Lato_regular", sans-serif;
+  color: #787A80;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .delivery-section table th, .wrapper .mainsection .detailscontainer .detailsrightsection .delivery-section table td {
+  border-bottom: 1px solid #D7DADD;
+  padding: 16px;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .delivery-section table thead th {
+  border-bottom: 1px solid #D7DADD;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .delivery-section table tbody {
+  font-family: "Lato_regular", sans-serif;
+  color: #424551;
+  font-size: 0.8rem;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .return-section {
+  border-bottom: 1px solid #E5E8ED;
+  padding-bottom: 1.5rem;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .return-section ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .return-section ul li {
+  color: #424551;
+  font-family: "Lato_regular", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .return-section ul li::marker {
+  color: #17696A;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .sharesection {
+  justify-content: left;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .sharesection .h3 {
+  margin-left: 0;
+}
+.wrapper .mainsection .detailscontainer .detailsrightsection .payment-options {
+  margin-top: 2.8rem;
+  width: 30rem;
+}
+
+/*# sourceMappingURL=style.css.map */
